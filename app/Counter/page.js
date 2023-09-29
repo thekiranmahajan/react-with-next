@@ -2,30 +2,39 @@
 import { useState } from "react";
 
 const page = () => {
-  let [counter, SetCounter] = useState(22);
+  let [counter, setCounter] = useState(22);
+  let [message, setMessage] = useState("😎");
 
   const ageUp = () => {
     if (counter >= 0 && counter <= 21) {
       counter++;
-      SetCounter(counter);
+      setCounter(counter);
     } else {
+      setMessage("Ohh! sirr Mr. Ray is not that old ohk!");
       console.log(
         `Ohh! sirr Mr.Ray is not that old ohk!,${Math.floor(Math.random() * 5)}`
       );
     }
+    setTimeout(() => {
+      setMessage("😎");
+    }, 2000);
   };
   const ageDown = () => {
     if (counter >= 1 && counter <= 22) {
       counter--;
-      SetCounter(counter);
+      setCounter(counter);
     } else {
+      setMessage("Heyy! wait u can't vanish Mr. Ray");
       console.log(
         `Heyy! wait u can't vanish Mr.Ray,${Math.floor(Math.random() * 5)}`
       );
     }
+    setTimeout(() => {
+      setMessage("😎");
+    }, 2000);
   };
   return (
-    <section className="w-full bg-slate-600 h-[100vh] flex justify-center items-center">
+    <section className="w-full bg-slate-600 h-[100vh] flex justify-center items-center flex-col">
       <h2 className="absolute rounded-lg top-1 h-6 text-white text-center w-10 bg-red-400">
         {counter}
       </h2>
@@ -55,6 +64,12 @@ const page = () => {
         >
           DOWN
         </button>
+      </div>
+      <div
+        className="mt-5 w-96 h-20 p-5 text-2xl bg-slate-400 flex justify-center items-center font-sans font-bold rounded-xl border-dashed border-blue-500 border-2
+      "
+      >
+        <h1>{message}</h1>
       </div>
     </section>
   );
