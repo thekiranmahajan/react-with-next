@@ -26,6 +26,18 @@ const page = () => {
   };
   return (
     <section className="w-full bg-slate-600 h-[100vh] flex justify-center items-center">
+      <h2 className="absolute rounded-lg top-1 h-6 text-white text-center w-10 bg-red-400">
+        {counter}
+      </h2>
+      <h2 className="absolute rounded-lg  left-1 h-6 text-white text-center w-10 bg-red-400">
+        {counter}
+      </h2>{" "}
+      <h2 className="absolute rounded-lg  right-1 h-6 text-white text-center w-10 bg-red-400">
+        {counter}
+      </h2>
+      <h2 className="absolute rounded-lg  bottom-1 h-6 text-white text-center w-10 bg-red-400">
+        {counter}
+      </h2>
       <div className="flex items-center justify-center flex-col bg-white h-64 w-60 rounded-lg shadow-lime-300 shadow-2xl sm:">
         <h1 className="font-bold font-mono text-3xl mb-2 bg-cyan-200 rounded-xl p-2 text-emerald-500">
           {counter}
